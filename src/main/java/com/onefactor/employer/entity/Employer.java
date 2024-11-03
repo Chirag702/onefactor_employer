@@ -1,5 +1,7 @@
  package com.onefactor.employer.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -31,4 +33,8 @@ public class Employer {
     private String note;
     
     private String resourceUri;
+    
+    private List<Long> jobId;
+   
+   
 }
