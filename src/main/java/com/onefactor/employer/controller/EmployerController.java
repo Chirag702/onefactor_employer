@@ -13,7 +13,7 @@ import com.onefactor.employer.service.EmployerService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/employer")
+@RequestMapping("/api/employer")
 public class EmployerController {
 
 	
@@ -38,7 +38,7 @@ public class EmployerController {
 		return token.substring(7); // Remove "Bearer " prefix
 	}
 
-    @PostMapping
+    @PostMapping("c")
     public ResponseEntity<?> createEmployer(@RequestBody Employer employer,@RequestHeader("Authorization") String authorization) {
 
 		if (!isUserAuthorized(extractJwtToken(authorization))) {
@@ -62,7 +62,7 @@ public class EmployerController {
         return ResponseEntity.ok(employer);
     }
 
-    @GetMapping
+    @GetMapping("a")
     public ResponseEntity<?> getAllEmployers(@RequestHeader("Authorization") String authorization) {
 
 		if (!isUserAuthorized(extractJwtToken(authorization))) {
